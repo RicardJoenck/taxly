@@ -1,50 +1,23 @@
-# React + TypeScript + Vite
+# Taxly
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple project set up with **Vite**, **React**, and **TypeScript**. Below are the available commands you can run using your preferred package manager.
 
-Currently, two official plugins are available:
+## Available Commands
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Development
 
-## Expanding the ESLint configuration
+- **`dev`**: Start the development server using Vite.
+- **`test`**: Run tests using Vitest.
+- **`test:coverage`**: Run tests with code coverage.
+- **`lint`**: Lint the project using ESLint.
+- **`build`**: Build the project with TypeScript and Vite.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Considerations
 
-- Configure the top-level `parserOptions` property like this:
+In the sake of time a couple things weren't built, but would be improvements that I would tackle next
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **.env** - Currently the application only queries the backend to an static URL, ideally it would use the information of .env files for each enviroment
+- **i18n** - Didn't have time to address any internalization tooling
+- **Income Input** - Currently it just formats to Dollar, this could be refactor to be dynamic based on the user
+- **Testing** - I focused mainly on addressing the biggest cases, with the two test files we are already at 80ish percent coverage, but definitely would be a point I would revisit
+- **Chakra** - I opted for Chakra UI, because I wanted to try something new and I heard great things about it in the past, but honestly speaking I wasn't a big fan of where they went with the new version and the whole snippet idea, I regret the decision a bit as I ended up wasting some time getting to know the tool rather than the assignment and polishing other sections, all in all it isn't bad, but would have liked to explore it with more time
